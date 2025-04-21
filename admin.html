@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Admin Login</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="login-container">
+    <h1>Admin Login</h1>
+    <div class="input-container">
+      <input type="password" id="adminPassword" placeholder="Enter Password" />
+      <button onclick="loginAdmin()">Login</button>
+    </div>
+  </div>
+
+  <script>
+    const ADMIN_PASSWORD = "admin123"; // Can be changed
+
+    function loginAdmin() {
+      const password = document.getElementById("adminPassword").value;
+      if (password === ADMIN_PASSWORD) {
+        localStorage.setItem("admin", "true");
+        window.location.href = "index.html"; // Redirect to the main page
+      } else {
+        alert("Incorrect password! Please try again.");
+      }
+    }
+  </script>
+</body>
+</html>
